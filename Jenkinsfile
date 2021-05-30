@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Hello World'
             }
-        },
+        }
         stage('build') {
                     steps {
                         echo 'done'
