@@ -15,7 +15,7 @@ pipeline {
         }
         stage('build2') {
             steps {
-                sh('java -jar -Dspring.profiles.active=dev target/*.jar')
+                sh('BUILD_ID=dontKillMe java -jar -Dspring.profiles.active=dev target/*.jar&')
             }
         }
     }
