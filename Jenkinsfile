@@ -11,7 +11,7 @@ pipeline {
                 sh('mvn package')
             }
         }
-        stage('build') {
+        stage('build2') {
             steps {
                 echo 'done2'
             }
