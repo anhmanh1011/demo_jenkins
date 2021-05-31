@@ -3,15 +3,11 @@ pipeline {
 
 
     stages {
-        stage('build') {
+        stage('build and run') {
             steps {
-                sh('mvn package')
+                sh('mvn spring-boot:run -Dspring-boot.run.profiles=dev')
             }
         }
-        stage('build2') {
-            steps {
-                echo 'done2'
-            }
-        }
+
     }
 }
