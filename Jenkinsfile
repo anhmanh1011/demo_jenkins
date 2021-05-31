@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh('nohub mvn spring-boot:run -Dspring-boot.run.profiles=dev&')
+                sh('nohup mvn spring-boot:run -Dspring-boot.run.profiles=dev&')
             }
         }
 
