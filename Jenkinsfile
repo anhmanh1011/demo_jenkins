@@ -1,9 +1,11 @@
 pipeline {
     agent any
+
+
     stages {
-        stage('build and run') {
+        stage('build') {
             steps {
-                sh('mvn spring-boot:run -Dspring-boot.run.profiles=dev &')
+                sh('mvn spring-boot:run -Dspring-boot.run.profiles=dev')
             }
         }
 
