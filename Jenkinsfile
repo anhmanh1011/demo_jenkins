@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('build and run') {
             steps {
-                sh('mvn spring-boot:run -Dspring-boot.run.profiles=dev')
+                sh('mvn spring-boot:run -Dspring-boot.run.profiles=dev&')
             }
         }
 
