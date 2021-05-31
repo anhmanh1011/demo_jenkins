@@ -5,10 +5,15 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh('nohup mvn spring-boot:run -Dspring-boot.run.profiles=dev&')
+                sh('mvn package')
             }
         }
 
 
+        stage('build2') {
+            steps {
+                sh('java -jar -Dspring.profiles.active=prod target/*.jar')
+            }
+        }
     }
 }
