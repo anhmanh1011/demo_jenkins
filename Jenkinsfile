@@ -1,9 +1,14 @@
 pipeline {
     agent any
+    tools {
+        maven 'MAVEN_HOME'
+        jdk 'JAVA_HOME'
+    }
+
     stages {
         stage('build') {
             steps {
-                sh('mvn package')
+                sh('MAVEN_HOME package')
             }
         }
         stage('build') {
