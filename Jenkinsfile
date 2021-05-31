@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh('MAVEN_HOME package')
+                sh('mvn package')
             }
         }
         stage('build') {
