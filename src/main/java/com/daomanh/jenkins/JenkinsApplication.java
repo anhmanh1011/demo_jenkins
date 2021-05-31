@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @EnableWebSecurity
 @SpringBootApplication
 public class JenkinsApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(JenkinsApplication.class, args);
     }
