@@ -12,7 +12,7 @@ pipeline {
 
         stage('build2') {
             steps {
-                sh('java -jar -Dspring.profiles.active=prod target/*.jar')
+                sh('java -jar -Dspring.profiles.active=dev target/*.jar')
             }
         }
     }
