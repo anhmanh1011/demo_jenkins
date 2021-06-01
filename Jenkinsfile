@@ -12,7 +12,7 @@ pipeline {
                 sh('mvn package')
             }
         }
-        stage('build') {
+        stage('build2') {
             steps {
                 sh('chmod -R 777 ./target')
             }
