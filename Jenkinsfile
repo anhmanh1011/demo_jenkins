@@ -14,9 +14,10 @@ pipeline {
         }
         stage('build_docker') {
             steps {
-                sh('docker build -t')
+                sh('docker build -f Dockerfile')
             }
-        }   stage('docker_run') {
+        }
+        stage('docker_run') {
             steps {
                 sh('docker run -p 8090:8090')
             }
