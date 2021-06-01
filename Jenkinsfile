@@ -1,7 +1,6 @@
 pipeline {
     agent any
 
-
     stages {
         stage('clean') {
             steps {
@@ -13,11 +12,11 @@ pipeline {
                 sh('mvn package')
             }
         }
-        stage('build docker') {
+        stage('build_docker') {
             steps {
                 sh('docker build -t')
             }
-        }   stage('docker run') {
+        }   stage('docker_run') {
             steps {
                 sh('docker run -p 8090:8090')
             }
