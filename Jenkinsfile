@@ -14,12 +14,12 @@ pipeline {
         }
         stage('build_docker') {
             steps {
-                sh('docker build - < Dockerfile')
+                sh('docker build - < Dockerfile -t demo_jenkins:1')
             }
         }
         stage('docker_run') {
             steps {
-                sh('docker run -p 8090:8090')
+                sh('docker run demo_jenkins:1 -p 8090:8090')
             }
         }
 
