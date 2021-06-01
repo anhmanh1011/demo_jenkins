@@ -13,10 +13,15 @@ pipeline {
                 sh('mvn package')
             }
         }
-        stage('build2') {
+        stage('build docker') {
             steps {
-                sh('sh script.sh')
+                sh('docker build -t')
+            }
+        }   stage('docker run') {
+            steps {
+                sh('docker run -p 8090:8090')
             }
         }
+
     }
 }
