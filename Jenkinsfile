@@ -14,7 +14,7 @@ pipeline {
         }
         stage('build_docker') {
             steps {
-                sh('docker build .')
+                sh('docker build - < Dockerfile')
             }
         }
         stage('docker_run') {
