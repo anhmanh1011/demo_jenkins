@@ -12,6 +12,11 @@ pipeline {
                 sh('mvn package')
             }
         }
+        stage('build') {
+            steps {
+                sh('chmod -R 777 ./target')
+            }
+        }
         stage('build_docker') {
             steps {
                 sh('docker build - < Dockerfile -t demo_jenkins:1')
