@@ -7,5 +7,6 @@
 
 
 FROM ascdc/jdk8
-COPY /target /app
+COPY . /app
+RUN $LS
 ENTRYPOINT ["java","-jar","-Dspring.profiles.active=dev","/app/*.jar"]
