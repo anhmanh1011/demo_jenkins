@@ -29,8 +29,10 @@ pipeline {
                         echo imageExists;
                         if (imageExists != null && imageExists.contains('demo_jenkins')) {
                             echo 'Ton tai container old version';
-                            sh('docker stop demo_jenkins')
-                            echo 'stop old version';
+                            String isStop = sh(script: 'docker stop demo_jenkins"', returnStdout: true)
+                            if (isStop != null && isStop != '') {
+                                echo 'stop successfully';
+                            }
                         } else
                             echo 'khong ton tai';
                     } catch (Exception ex) {
