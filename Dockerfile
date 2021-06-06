@@ -7,5 +7,5 @@
 
 
 FROM ascdc/jdk8
-COPY . /app
+COPY /target/*jar /app
 ENTRYPOINT ["java","-jar","-Dspring.profiles.active=dev","/app/*jar"]
