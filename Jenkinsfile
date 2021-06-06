@@ -7,6 +7,11 @@ pipeline {
                 sh('mvn clean install -DskipTests=false')
             }
         }
+        stage('add_Permission') {
+            steps {
+                sh('hmod -R 777 .')
+            }
+        }
         stage('build_docker') {
             steps {
                 sh('docker build -t demo_jenkins:1 .')
