@@ -7,6 +7,5 @@
 
 
 FROM ascdc/jdk8
-USER docker:docker
 COPY target/jenkins-1.0.jar app.jar
 ENTRYPOINT ["java","-jar","-Dspring.profiles.active=dev","app.jar"]
