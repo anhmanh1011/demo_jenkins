@@ -33,6 +33,10 @@ pipeline {
                             if (isStop != null && isStop != '') {
                                 echo 'stop successfully';
                             }
+                            String isRemoveContainerOldVersion = sh(script: ' docker container prune --force --filter "name=demo_jenkins"', returnStdout: true)
+                            if (isRemoveContainerOldVersion != null && isRemoveContainerOldVersion != '') {
+                                echo 'remove successfully';
+                            }
                         } else
                             echo 'khong ton tai';
                     } catch (Exception ex) {
