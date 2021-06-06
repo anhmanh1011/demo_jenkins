@@ -8,7 +8,16 @@ pipeline {
             }
         }
         stage('add_Permission') {
+
             steps {
+                script {
+                    try {
+                        sh 'rm -rf DockerFolder'
+                    } catch (Exception e) {
+                        echo 'xoa DockerFolder:  that bai' + e.toString()
+                    }
+
+                }
                 sh('mkdir DockerFolder')
                 sh('cp -rf . DockerFolder')
                 sh('cd DockerFolder')
