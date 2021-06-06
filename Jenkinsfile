@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    environment{
-        MY_FILE = fileExists 'DockerFolder'
-    }
+
     stages {
         stage('build') {
             steps {
@@ -10,14 +8,14 @@ pipeline {
             }
         }
         stage('add_Permission') {
-            steps {
-                when { expression { MY_FILE == 'false' } }
-                steps {
-                    sh "mkdir DockerFolder"
-                    sh "cp . DockerFolder"
-                    sh "cd DockerFolder"
-                }
+            def folder = new File('DockerFolder')
+            // If it doesn't exist
+            if (!folder.exists()) {
+                // Create all folders up-to and including B
+                folder.mkdirs()
             }
+            sh "cp . DockerFolder"
+            sh "cd DockerFolder"
         }
         stage('build_docker') {
             steps {
