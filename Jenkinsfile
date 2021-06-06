@@ -8,7 +8,9 @@ pipeline {
             }
         }
         stage('add_Permission') {
-            sh('chmod -R 777 *')
+            steps {
+                sh('chmod -R 777 *')
+            }
         }
         stage('build_docker') {
             steps {
