@@ -9,12 +9,12 @@ pipeline {
         }
         stage('add_Permission') {
             steps {
-                def exists = fileExists 'DockerFolder'
+                def exists = fileExists '/DockerFolder'
 
                 if (!exists) {
                     sh "mkdir DockerFolder"
                 }
-                sh "cp Dockerfile DockerFolder"
+                sh "cp . DockerFolder"
                 sh "cd DockerFolder"
             }
         }
