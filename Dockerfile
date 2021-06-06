@@ -7,6 +7,5 @@
 
 
 FROM ascdc/jdk8
-COPY . /target
-RUN echo $PWD
-ENTRYPOINT ["pwd"]
+COPY /app /target
+ENTRYPOINT ["java","-jar","-Dspring.profiles.active=dev","/app/*.jar"]
