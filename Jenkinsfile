@@ -10,8 +10,9 @@ pipeline {
         stage('add_Permission') {
             steps {
                 sh('mkdir DockerFolder')
-                sh('cp . DockerFolder')
+                sh('cp -rf . DockerFolder')
                 sh('cd DockerFolder')
+                sh('chmod -R 777 DockerFolder')
 
             }
         }
