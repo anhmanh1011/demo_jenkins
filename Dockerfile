@@ -9,4 +9,4 @@
 FROM ascdc/jdk8
 COPY . /target
 RUN echo $PWD
-ENTRYPOINT ["java","-jar","-Dspring.profiles.active=dev","jenkins-1.0.jar"]
+ENTRYPOINT ["pwd"]
