@@ -19,15 +19,16 @@ pipeline {
         }
 
         stage('docker_run') {
-            script{
-                try{
-                    sh('docker stop demo_jenkins')
-                }catch(Exception ex){
-                    echo ex;
-                }
 
-            }
             steps {
+                script {
+                    try {
+                        sh('docker stop demo_jenkins')
+                    } catch (Exception ex) {
+                        echo ex;
+                    }
+
+                }
                 sh('docker run  --name demo_jenkins -d -p 8090:8090 demo_jenkins')
             }
         }
