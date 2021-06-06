@@ -26,6 +26,7 @@ pipeline {
 
                     try {
                         def imageExists = sh(script: 'docker ps --filter "name=demo_jenkins"', returnStdout: true)
+                        echo imageExists;
                         if (imageExists > 0)
                             sh('docker stop demo_jenkins')
                     } catch (Exception ex) {
