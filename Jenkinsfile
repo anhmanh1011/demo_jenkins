@@ -10,7 +10,8 @@ pipeline {
         stage('add_Permission') {
             steps {
                 sh('mkdir DockerFolder')
-                sh('cp Dockerfile DockerFolder')
+                sh('cp . DockerFolder')
+                sh('cd DockerFolder')
 
             }
         }
