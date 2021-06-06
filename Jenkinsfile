@@ -2,20 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('clean') {
-            steps {
-                sh('mvn clean install')
-            }
-        }
         stage('build') {
             steps {
-                sh('mvn package')
-            }
-        }
-        stage('build2') {
-            steps {
-
-                sh('chmod -R 777 .')
+                sh('mvn clean install -DskipTests=false')
             }
         }
         stage('build_docker') {
