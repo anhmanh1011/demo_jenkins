@@ -9,5 +9,5 @@
 FROM ascdc/jdk8
 RUN addgroup -S spring && adduser -S spring -G spring
 USER spring:spring
-COPY target/jenkins-1.0.jar app.jar
-ENTRYPOINT ["java","-jar","-Dspring.profiles.active=dev","app.jar"]
+COPY . /app
+ENTRYPOINT ["java","-jar","-Dspring.profiles.active=dev","/app/*jar"]
