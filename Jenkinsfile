@@ -8,14 +8,16 @@ pipeline {
             }
         }
         stage('add_Permission') {
-            def folder = 'DockerFolder'
-            // If it doesn't exist
-            if (!fileExists(folder)) {
-                // Create all folders up-to and including B
-                folder.mkdirs()
+            script {
+                def folder = 'DockerFolder'
+                // If it doesn't exist
+                if (!fileExists(folder)) {
+                    // Create all folders up-to and including B
+                    folder.mkdirs()
+                }
+                sh "cp . DockerFolder"
+                sh "cd DockerFolder"
             }
-            sh "cp . DockerFolder"
-            sh "cd DockerFolder"
         }
         stage('build_docker') {
             steps {
