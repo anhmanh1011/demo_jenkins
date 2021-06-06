@@ -27,9 +27,11 @@ pipeline {
                     try {
                         def imageExists = sh(script: 'docker ps --filter "name=demo_jenkins"', returnStdout: true)
                         echo imageExists;
-                        if (imageExists == 0)
+                        if (imageExists == 0) {
+                            echo 'Ton tai container old version';
                             sh('docker stop demo_jenkins')
-                        else
+                            echo 'stop old version';
+                        } else
                             echo 'khong ton tai';
                     } catch (Exception ex) {
                         echo ex;
