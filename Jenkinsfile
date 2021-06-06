@@ -19,7 +19,7 @@ pipeline {
         }
         stage('build_docker') {
             steps {
-                sh('docker build - < Dockerfile -t demo_jenkins:1')
+                sh('docker build . -t demo_jenkins:1')
             }
         }
         stage('docker_run') {
