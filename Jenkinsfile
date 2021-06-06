@@ -8,9 +8,9 @@ pipeline {
             }
         }
         stage('add_Permission') {
-            def folder = new File('DockerFolder')
+            def folder = 'DockerFolder'
             // If it doesn't exist
-            if (!folder.exists()) {
+            if (!fileExists(folder)) {
                 // Create all folders up-to and including B
                 folder.mkdirs()
             }
