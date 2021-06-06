@@ -19,7 +19,7 @@ pipeline {
         }
         stage('docker_run') {
             steps {
-                sh('docker run -p 8090:8090 demo_jenkins')
+                sh('docker run -d -p 8090:8090 demo_jenkins')
             }
         }
 
