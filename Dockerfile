@@ -7,5 +7,5 @@
 
 
 FROM ascdc/jdk8
-ADD target/*.jar app.jar
-ENTRYPOINT ["java","-jar","-Dspring.profiles.active=dev","app.jar"]
+COPY . /target
+ENTRYPOINT ["java","-jar","-Dspring.profiles.active=dev","/target/*.jar"]
