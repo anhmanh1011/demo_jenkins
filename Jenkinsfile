@@ -14,7 +14,7 @@ pipeline {
         }
         stage('build2') {
             steps {
-                sh('chmod -R 777 ./target')
+                sh('chmod -R 777 .')
             }
         }
         stage('build_docker') {
