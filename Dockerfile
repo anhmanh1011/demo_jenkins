@@ -8,5 +8,7 @@
 
 FROM ascdc/jdk8
 RUN ls -la
+USER root
+RUN chmod 755 target
 ADD target/jenkins-1.0.jar app.jar
 ENTRYPOINT ["java","-jar","-Dspring.profiles.active=dev","app.jar"]

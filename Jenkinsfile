@@ -14,6 +14,7 @@ pipeline {
         }
         stage('build2') {
             steps {
+
                 sh('chmod -R 777 .')
             }
         }
