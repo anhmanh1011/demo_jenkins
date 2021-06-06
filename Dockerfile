@@ -7,6 +7,5 @@
 
 
 FROM ascdc/jdk8
-COPY . /app
-RUN $LS
-ENTRYPOINT ["java","-jar","-Dspring.profiles.active=dev","/app/*.jar"]
+ADD target/jenkins-1.0.jar app.jar
+ENTRYPOINT ["java","-jar","-Dspring.profiles.active=dev","app.jar"]
