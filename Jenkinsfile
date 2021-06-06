@@ -9,7 +9,7 @@ pipeline {
         }
         stage('add_Permission') {
             steps {
-                sh('hmod -R 777 .')
+                sh('chmod -R 777 .')
             }
         }
         stage('build_docker') {
