@@ -8,4 +8,4 @@
 
 FROM ascdc/jdk8
 COPY . /target
-ENTRYPOINT ["java","-jar","-Dspring.profiles.active=dev","/target/*.jar"]
+ENTRYPOINT ["java","-jar","-Dspring.profiles.active=dev","/target/jenkins-1.0.jar"]
