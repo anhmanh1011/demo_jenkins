@@ -9,8 +9,13 @@ pipeline {
         }
         stage('add_Permission') {
             steps {
-                sh('chmod -R 777 ./target')
-                sh('chmod -R 777 Dockerfile')
+                def exists = fileExists 'DockerFolder'
+
+                if (!exists) {
+                    sh "mkdir DockerFolder"
+                }
+                sh "cp Dockerfile DockerFolder"
+                sh "cd DockerFolder"
             }
         }
         stage('build_docker') {
