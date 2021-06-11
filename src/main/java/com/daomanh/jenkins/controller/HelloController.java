@@ -11,8 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/hello")
 public class HelloController {
 
+    public static final int Manh = 55;
+
     @GetMapping("")
     public String hello(HttpServletRequest httpServletRequest) {
+        if(Manh > 50){
+            System.out.println("ahihi");
+        }
         return "Hello " + httpServletRequest.getPathInfo();
     }
 
