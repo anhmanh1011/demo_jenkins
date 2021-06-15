@@ -23,7 +23,6 @@ pipeline {
             steps {
                 script {
 
-
                     try {
                         String imageExists = sh(script: 'docker ps --filter "name=demo_jenkins"', returnStdout: true)
                         echo imageExists;
@@ -44,6 +43,7 @@ pipeline {
                     }
 
                 }
+
                 sh('docker run  --name demo_jenkins -d -p 8090:8090 demo_jenkins')
             }
         }
